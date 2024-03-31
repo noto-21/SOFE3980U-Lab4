@@ -11,7 +11,7 @@ pipeline {
   
 agent {
     kubernetes {
-	label 'sample-app'
+	label 'cd-jenkins-0'
       defaultContainer 'jnlp'
       yaml """
 apiVersion: v1
