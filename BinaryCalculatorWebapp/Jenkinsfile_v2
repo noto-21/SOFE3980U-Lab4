@@ -10,7 +10,34 @@ pipeline {
     JENKINS_CRED = "green-tract-379622"
   }
   
-agent any
+agent {
+	kubernetes {
+		label 'sample-app'
+      		defaultContainer 'jnlp'
+      		yaml """
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		labels:
+  		component: ci
+		spec:
+  		# Use service account that can deploy to all namespaces
+  		serviceAccountName: cd-jenkins
+  		containers:
+  		- name: gcloud
+    		image: gcr.io/cloud-builders/gcloud
+    		//image: google/cloud-sdk:latest
+    		command:
+    		- cat
+    		tty: true
+  		- name: kubectl
+    		image: gcr.io/cloud-builders/kubectl
+    		command:
+    		- cat
+    		tty: true
+		"""
+}
+  }
   tools {
     maven 'maven' 
   }
