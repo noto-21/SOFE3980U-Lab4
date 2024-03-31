@@ -35,18 +35,5 @@
   </dependencies>
   <build>
     <finalName>BinaryCalculatorWebapp</finalName>
-	<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<configuration>
-							<mainClass>com.ontariotechu.sofe3980U.Application</mainClass>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
   </build>
 </project>
