@@ -12,7 +12,7 @@ pipeline {
   
 agent {
     kubernetes {
-	label 'Lab4Cloud'
+	label 'cd-jenkins-0'
       defaultContainer 'jnlp'
       yaml """
 apiVersion: v1
