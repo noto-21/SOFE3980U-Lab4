@@ -1,10 +1,9 @@
 pipeline {
   environment {
-    //PROJECT = "REPLACE_WITH_YOUR_PROJECT_ID"
-	PROJECT = "green-tract-379622"
+	PROJECT = "Lab 4"
     APP_NAME = "binary-calculator2"
 	//CLUSTER = "REPLACE_WITH_YOUR_CLUSTER_NAME"
-    CLUSTER = "sofe3980u"
+    CLUSTER = "lab4"
     CLUSTER_ZONE = "northamerica-northeast1-b"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}"
     JENKINS_CRED = "green-tract-379622"
@@ -12,7 +11,7 @@ pipeline {
   
 agent {
     kubernetes {
-	label 'cd-jenkins-0'
+	label 'lab4'
       defaultContainer 'jnlp'
       yaml """
 apiVersion: v1
